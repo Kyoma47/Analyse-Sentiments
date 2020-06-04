@@ -198,7 +198,6 @@ vitalité
 succès
 santé
 chanceux
-
 bien
 confiant
 heureux
@@ -213,4 +212,4 @@ Célébration
 Compliment
 Félicitations
 Reconnaissance
-Remerciement
+Remerciements
