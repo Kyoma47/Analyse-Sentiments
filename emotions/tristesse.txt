@@ -1,4 +1,5 @@
-
+larme
+pleurs
 mélancolie,deuil,chagrin,nostalgie,ennui,dégoût,désespoir,triste,amertume,émotion,sentiment,souffrance,larme,découragement,mélancolique,désolation,dépression,douleur,morne,abattement,affliction,solitude,lassitude,inquiétude,langueur,nuage,cafard,gaieté,malheur,angoisse,glauque,peur,amer,consternation,désespérance,regret,spleen,infinie,ressentir,colère,effroi,résignation,acédie,haine,humeur,mal,neurasthénie,pleurer,rancœur,âme,blues,déchirement,désenchantement,écœurement,laideur,morosité,sombre,compassion,consolation,idées noires,abattu,envahit,éprouve,accablé,accablement,affligé,déplaisir,indéfinissable,passion,profonde,anxiété,bile,exprimer,indicible,morose,peine,adieu,contrariété,dépit,drame,fatigue,incurable,monotonie,noirceur,rage,tourment,tracas,atrabile,contrition,déception,déprime,écroulé,lugubre,serrer le cœur,inconsolable,incommensurable,lamentation,inexprimable,isolement,repentir,stupeur,abandon,aigreur,aspect morne,assombrissement,asthénie,attristé,austérité,bourdon,brumaille,calamité,componction,contrit,dépressif,désabusement,désœuvrement,élancement,embarras,endolorissement,éplorement,épreuve,fiel,froid,grisaille,hypocondrie,lypémanie,malaise,maussaderie,mocheté,navrement,noir,papillons noirs,pauvreté,platitude,rigueurs,saudade,serrement de cœur,sévérité,solennité,sombreur,souci,tristounet,vague à l'âme,voilé
 
 apathique
