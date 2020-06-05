@@ -1,4 +1,9 @@
-anxieux 
+
+phobie,panique,émotion,crainte,frousse,trouille,angoisse,épouvante,terreur,anxiété,danger,frayeur,cauchemar,sentiment,trac,horreur,pétoche,claustrophobie,frisson,haine,appréhension,épouvantail,timidité,flipper,insécurité,agoraphobie,culpabilité,irrationnelle,trembler,claustrophobe,dégoût,folie,menace,solitude,spectre,loup,phobique,taf,amygdale,avoir les chocottes,courage,craintif,intimidation,tristesse,honte,stress,paranoïa,sensation,vertige,fuir,joie,araignée,avoir la chienne,avoir les jetons,chocottes,couardise,foutre les jetons,hydrophobie,obscurité,russophobie,saisissement,trouble,grande peur,hantise,impavide,répulsion,effrayant,effroi,frémir,hanté,lâcheté,pusillanimité,surmonter,alarme,effrayé,faire peur,hallucination,inquiétude,irraisonnée,monstre,sorcière,arachnophobie,inconnu,rejet,serpents,agitation,chienne,croque-mitaine,douleur,fantastique,ogre,poltron,stimulus,sueur,affolement,arachnophobe,aversion,détresse,émotionnel,évitement,nomophobie,psychologique,rassurer,violence,à faire peur,anuptaphobie,anxieux,apeuré,apopathodiaphulatophobie,attaquer,barre,craindre,effraie,enfer,fantôme,foie,surnaturel,tremblant,tremble,adrénaline,cacher,colère,figer,hésitation,homophobie,loup-garou,mouiller,paralyse,peureux,Phobos,ressentir,symptôme,toute seule,transir,trypanophobie,acrophobie,chair de poule,croyance,démon,enfuir,Halloween,maléfique,méfiance,ose,zoophobie,coulrophobie,cri,fuite,maladive,prendre l'avion,pressentiment,scopophobie,tremblement,ablutophobie,acarophobie,achluophobie,affres,ailurophobie,alerte,aquaphobie,autophobie,baliser,chantage,chier dans ses culottes,chier dans son froc,consternation,dédain,déraison,désarroi,détestation,doute,égarement,emmerde,émoi,éreutophobie,exécration,flip,haptophobie,herpétophobie,hétérophobie,jetons,malepeur,mysophobie,obusite,parthénophobie,péfli,pépettes,peur bleue,pisser dans son froc,pleutrerie,poltronnerie,prémonition,préoccupation,provoquer,prudence,répugnance,reup,se déballonner,se dégonfler,souci,souleur,stupéfaction,stupeur,suée,superstition,thanatophobie,tourment,train fantôme,transe,Trémeur,venette,veulerie
+
+
+
+anxieux
 timoré
 modeste
 confus

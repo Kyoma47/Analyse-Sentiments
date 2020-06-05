@@ -3,6 +3,10 @@ amitié
 amour
 agréable
 améliorer
+apothéose
+allégresse
+
+béatitude
 beau
 belle
 beauté
@@ -14,16 +18,14 @@ bienvenue
 bon
 bonne
 bonheur
+
 capable
 chaleur
 chanceux
+confiant
 confiance
 contemplation
-
 compréhension
-apothéose
-allégresse
-béatitude
 
 consécration
 couronnement
@@ -37,6 +39,7 @@ extase
 gaieté
 gloire
 
+heureux
 hilarité
 honneur
 idylle
@@ -193,8 +196,6 @@ chance
 succès
 
 
-confiant
-heureux
 
 
 
