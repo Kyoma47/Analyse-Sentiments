@@ -17,16 +17,18 @@ def occurences(liste_mots):
         D[mot.lower()] = 1 if mot.lower() not in D else D[mot.lower()]+1
     return D
 
-def occurences_fichier(nom_fichier):
+def doublons(nom_fichier):
     with open(nom_fichier, "r", encoding="utf-8" ) as fichier :
         mots = decouper( nettoyer( fichier.read() ) )
         trier(mots)
-
-
-        with open("alphabetic_"+ nom_fichier.split("/")[-1], 'w+', encoding="utf-8") as file:
-            file.write('\n')
-            for mot in mots: file.write( mot +'\n')
-
         dic  = occurences( mots )
         for cle in dic :
             if dic[cle]>1 : print(cle, ":", dic[cle])
+
+def alphabetic_fichier(nom_fichier):
+    with open(nom_fichier, "r", encoding="utf-8" ) as fichier :
+        mots = decouper( nettoyer( fichier.read() ) )
+        trier(mots)
+        with open("alphabetic_"+ nom_fichier.split("/")[-1], 'w+', encoding="utf-8") as file:
+            file.write('\n')
+            for mot in mots: file.write( mot +'\n')
