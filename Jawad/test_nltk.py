@@ -1,13 +1,14 @@
-
 from nltk.tokenize import word_tokenize
 import string
 from nltk.corpus import stopwords
 
 nom_fichier = "trois_petites_oies"
 
-
 def afficher(liste, nom_image="graph.png"):
-    w = Counter(list_emotions)
+    from collections import Counter
+    import matplotlib.pyplot as plt
+    
+    w = Counter(liste)
     fig, axl = plt.subplots()
     plt.bar( w.keys(), w.values() )
     fig.autofmt_xdate()
