@@ -94,7 +94,45 @@ aquaphobie
 autophobie
 baliser
 froc
-consternation,dédain,déraison,désarroi,détestation,doute,égarement,emmerde,émoi,éreutophobie,exécration,flip,haptophobie,herpétophobie,hétérophobie,jetons,malepeur,mysophobie,obusite,parthénophobie,péfli,pépettes,peur bleue,pisser dans son froc,pleutrerie,poltronnerie,prémonition,préoccupation,provoquer,prudence,répugnance,reup,se déballonner,se dégonfler,souci,souleur,stupéfaction,stupeur,suée,superstition,thanatophobie,tourment,train fantôme,transe,Trémeur,venette,veulerie
+déraison
+doute
+égarement
+emmerde
+éreutophobie
+exécration
+flip
+haptophobie
+herpétophobie
+hétérophobie
+jetons
+malepeur
+mysophobie
+obusite
+parthénophobie
+péfli
+pépettes
+bleue
+pisser
+pleutrerie
+poltronnerie
+prémonition
+préoccupation
+provoquer
+prudence
+déballonner
+dégonfler
+souci
+souleur
+stupeur
+suée
+superstition
+thanatophobie
+tourment
+fantôme
+transe
+Trémeur
+venette
+veulerie
 
 
 
