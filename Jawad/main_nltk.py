@@ -13,11 +13,9 @@ def sentiment_analyse(texte):
 
 def decouper(texte):
     minuscules = texte.lower()
-    propre = minuscules.translate( str.maketrans('’\n\t',3*' ', string.punctuation + '…' ) )
-    sentiment_analyse(propre)
-    mots   = word_tokenize( propre, "english")
-    usefull = [mot for mot in mots if mot not in stopwords.words("english") and len(mot)>1]
-    return usefull
+    propre = minuscules.translate( str.maketrans('’-\n\t', 4*' ', string.punctuation.replace("-","")+'…') )
+    mots = word_tokenize( propre, "french")
+    return [mot for mot in mots if mot not in stopwords.words("french")]
 
 def afficher(list_emotions, nom_image="graph.png" ):
     w = Counter(list_emotions)
