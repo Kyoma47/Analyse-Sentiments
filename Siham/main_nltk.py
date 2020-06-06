@@ -13,7 +13,6 @@ def sentiment_analyse(texte):
 
 def decouper(texte):
     Aremplacer = '’\n\t' + string.punctuation
-
     texte_propre = texte.lower().translate( str \
     .maketrans(Aremplacer, len(Aremplacer)*' ', '…0123456789'))
     mots = word_tokenize(texte_propre, "french")
