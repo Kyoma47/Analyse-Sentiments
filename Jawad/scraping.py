@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 from bs4.element import Tag as tg
 import pickle
-
+from main_nltk import decouper
 
 
 def scraping_genius(url):
@@ -14,4 +14,5 @@ def scraping_genius(url):
         if div!=None: return [ligne for ligne in div if type(ligne) != tg]
         #div  = soup.find(class_="song_body-lyrics")
 
-liste = scraping_genius("https://genius.com/Keenv-les-mots-lyrics")
+#liste = scraping_genius("https://genius.com/Keenv-les-mots-lyrics")
+print( decouper("Bonjour tout le monde.") )
