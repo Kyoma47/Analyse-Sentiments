@@ -8,15 +8,17 @@ from collections import Counter
 import matplotlib.pyplot as plt
 
 def sentiment_analyse(texte):
-    score = SentimentIntensityAnalyzer().polarity_scores(texte)
+    scores = SentimentIntensityAnalyzer().polarity_score(texte)
     negative, positive = score['neg'], score['pos']
 
 def decouper(texte):
+    Aremplacer = '’\n\t' + string.punctuation
+
     texte_propre = texte.lower().translate( str \
-    .maketrans('’\n\t-',4*' ', string.punctuation.replace('-','') + '…0123456789' ) )
+    .maketrans(Aremplacer, len(Aremplacer)*' ', '…0123456789'))
     mots = word_tokenize(texte_propre, "french")
     mots_utiles = [mot for mot in mots if mot not in stopwords.words("french")]
-    print(mots_utiles)
+    return mots_utiles
 
 def afficher(list_emotions, nom_image="graph.png" ):
     w = Counter(list_emotions)
