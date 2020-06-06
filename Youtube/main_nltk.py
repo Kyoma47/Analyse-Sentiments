@@ -13,7 +13,7 @@ def sentiment_analyse(texte):
 
 def decouper(texte):
     minuscules = texte.lower()
-    propre = minuscules.translate( str.maketrans('’\n','  ', string.punctuation + '…\t' ) )
+    propre = minuscules.translate( str.maketrans('’\n\t',3*' ', string.punctuation + '…' ) )
     sentiment_analyse(propre)
     mots   = word_tokenize( propre, "english")
     usefull = [mot for mot in mots if mot not in stopwords.words("english") and len(mot)>1]
