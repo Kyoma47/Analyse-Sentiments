@@ -32,3 +32,32 @@ def alphabetic_fichier(nom_fichier):
         with open("alphabetic_"+ nom_fichier.split("/")[-1], 'w+', encoding="utf-8") as file:
             file.write('\n')
             for mot in mots: file.write( mot +'\n')
+
+def afficher(list_emotions, nom_image="graph.png" ):
+    from collections import Counter
+    import matplotlib.pyplot as plt
+
+    w = Counter(list_emotions)
+    fig, axl = plt.subplots()
+    plt.bar( w.keys(), w.values() )
+    fig.autofmt_xdate()
+    plt.savefig( nom_image )
+    plt.show()
+    print(w)
+
+def poid_texte(nom_fichier):
+    emotions = ["amour", "colere", "degout", "honte", "joie", "peur", "surprise", "tristesse" ]
+    with open("../textes/" + nom_fichier, "r", encoding="utf-8") as texte:
+        mots = decouper( nettoyer( texte.read() ) )
+
+    print("mots :", mots)
+    liste_emotions = []
+    for emotion in emotions :
+        with open("../emotions/"+ emotion +".txt", encoding="utf-8") as fichier :
+            for mot in fichier:
+                #print(f"'{mot[:-1].strip()}'")
+                if mot[:-1].strip() in mots :
+                    liste_emotions.append( emotion )
+        print(emotion, liste_emotions)
+
+    afficher(liste_emotions)
