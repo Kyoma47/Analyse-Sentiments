@@ -10,9 +10,10 @@ import matplotlib.pyplot as plt
 def sentiment_analyse(texte):
     scores = SentimentIntensityAnalyzer().polarity_scores(texte)
     negative, positive = score['neg'], score['pos']
+
 def decouper(texte):
     minuscules = texte.lower()
-    propre = minuscules.translate( str.maketrans('’',' ', string.punctuation + '…\t\n' ) )
+    propre = minuscules.translate( str.maketrans('’\n','  ', string.punctuation + '…\t' ) )
     sentiment_analyse(propre)
     mots   = word_tokenize( propre, "english")
     usefull = [mot for mot in mots if mot not in stopwords.words("english") and len(mot)>1]
