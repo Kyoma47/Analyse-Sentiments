@@ -12,12 +12,13 @@ def sentiment_analyse(texte):
     negative, positive = score['neg'], score['pos']
 
 def decouper(texte):
-    minuscules = texte.lower()
-    propre = minuscules.translate( str.maketrans('’\n\t',3*' ', string.punctuation + '…' ) )
-    #sentiment_analyse(propre)
-    mots   = word_tokenize( propre, "english")
-    usefull = [mot for mot in mots if mot not in stopwords.words("english") and len(mot)>1]
-    return usefull
+    Aremplacer = '’\n\t' + string.punctuation
+
+    texte_propre = texte.lower().translate( str \
+    .maketrans(Aremplacer, len(Aremplacer)*' ', '…0123456789'))
+    mots = word_tokenize(texte_propre, "french")
+    mots_utiles = [mot for mot in mots if mot not in stopwords.words("french")]
+    return mots_utiles
 
 def afficher(list_emotions, nom_image="graph.png" ):
     w = Counter(list_emotions)

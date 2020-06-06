@@ -12,12 +12,11 @@ def sentiment_analyse(texte):
     negative, positive = score['neg'], score['pos']
 
 def decouper(texte):
-    minuscules = texte.lower()
-    propre = minuscules.translate( str.maketrans('’\n\t',3*' ', string.punctuation + '…' ) )
-    sentiment_analyse(propre)
-    mots   = word_tokenize( propre, "english")
-    usefull = [mot for mot in mots if mot not in stopwords.words("english") and len(mot)>1]
-    return usefull
+    texte_propre = texte.lower().translate( str \
+    .maketrans('’\n\t-',4*' ', string.punctuation.replace('-','') + '…0123456789' ) )
+    mots = word_tokenize(texte_propre, "french")
+    mots_utiles = [mot for mot in mots if mot not in stopwords.words("french")]
+    print(mots_utiles)
 
 def afficher(list_emotions, nom_image="graph.png" ):
     w = Counter(list_emotions)
@@ -68,4 +67,4 @@ def nlt_tweets(requete, max):
 
 #main :
 #nlt_fichier("read.txt")
-nlt_tweets("bunny", 500)
+#nlt_tweets("bunny", 500)
