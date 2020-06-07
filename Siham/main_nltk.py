@@ -23,12 +23,14 @@ def decouper(texte):
 
 def afficher(list_emotions, titre, artiste, nom_image="graph.png" ):
     w = Counter(list_emotions)
-    path = "C:\\Users\\siham\\github\\Analyse-Sentiments\\Siham\\" + str(artiste)
-    os.makedirs(path)
+    path = "C:\\Users\\siham\\github\\Analyse-Sentiments\\Siham\\"
+    nomDossier = path + artiste
+    if not os.path.exists(nomDossier):
+        os.makedirs(nomDossier)
     fig, axl = plt.subplots()
     plt.bar( w.keys(), w.values() )
     fig.autofmt_xdate()
-    plt.savefig(titre)
+    plt.savefig(nomDossier + "\\" + titre)
     #plt.show()
     print(w)
 
@@ -66,10 +68,3 @@ def nlt_tweets(requete, max):
     for tweet in get_tweets(requete, max):
         final_words += decouper(tweet)
     traitement(final_words)
-
-
-
-
-#main :
-#nlt_fichier("read.txt")
-#nlt_tweets("bunny", 500)
