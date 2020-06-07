@@ -24,17 +24,23 @@ def recuperer_paroles(soup):
                 lignes += [str(element)]
     return lignes
 
-def occurences_emotions(mots):
+def occurences_emotions(mots, ignorés):
     emotions = ["amour", "colere", "degout", "honte", "joie", "peur", "surprise", "tristesse"]
     dictionnaire = {}
-    ensemble = set()
+    utilisés = set()
     for emotion in emotions:
         dictionnaire[emotion] = 0
         with open("emotions/" + emotion + ".txt", "r", encoding='utf-8') as fichier :
             for mot in fichier:
                 if mot.strip() in mots :
                     dictionnaire[emotion] +=1
-                    ensemble.add(mot.strip())
+                    utilisés.add(mot.strip())
+                else:
+                    ignorés.add(mot.strip())
+    with open("Siham/mots_ignorés.txt", "w+", encoding='utf-8') as fichier :
+        for mot in ignorés:
+            fichier.write(mot+'\n')
+    print("utilisé : ", utilisés)
     return dictionnaire
 
 def afficher(dic_emotions, nom_dossier = "graphes", nom_image = "graphe.png"):
@@ -46,11 +52,13 @@ def afficher(dic_emotions, nom_dossier = "graphes", nom_image = "graphe.png"):
     #plt.show()
     print(w)
 
-def extraire_genius(url):
+def extraire_genius(url, ignorés):
     soup = rechercher_page(url)
     liste_paroles = recuperer_paroles(soup)
     titre = soup.find(class_="SongHeader__Title-sc-1b7aqpg-7").text
     artiste = soup.find(class_="SongHeader__Artist-sc-1b7aqpg-8").text
+    print(titre)
+    print(artiste)
     nomDossier = 'Siham/' + artiste
     if not os.path.exists(nomDossier):
         os.mkdir(nomDossier)
@@ -60,8 +68,17 @@ def extraire_genius(url):
     mots = []
     for ligne in liste_paroles :
         mots += decouper(ligne)
-    afficher(occurences_emotions(mots), nomDossier, titre)
+    afficher(occurences_emotions(mots, ignorés), nomDossier, titre)
 
+def parcourir_genius():
+    ignorés = set()
+    for chanteur in chanteurs:
+        for chanson in chanteur:
+            extraire_genius(chanson, ignorés)
+            print()
+            print()
+
+#============== main ================
 Kennv = ["https://genius.com/Keenv-explique-moi-lyrics", "https://genius.com/Keenv-les-mots-lyrics", \
 "https://genius.com/Keenv-saltimbanque-lyrics", "https://genius.com/Keenv-ma-vie-au-soleil-lyrics"]
 
@@ -76,7 +93,3 @@ Florent_Pagny = ["https://genius.com/Florent-pagny-vieillir-avec-toi-lyrics", "h
 "https://genius.com/Florent-pagny-rafale-de-vent-lyrics", "https://genius.com/Florent-pagny-revenons-sur-terre-lyrics"]
 
 chanteurs = [Florent_Pagny, Lara_fabian, Kennv]
-
-for chanteur in chanteurs:
-    for chanson in chanteur:
-        extraire_genius(chanson)
