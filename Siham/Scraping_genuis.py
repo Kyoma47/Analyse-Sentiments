@@ -8,7 +8,7 @@ def scraping_genius(url):
     while True:
         page = requests.get(url).text
         soup = BeautifulSoup(page, "lxml")
-        div = soup.find(class_="Lyrics__Container-sc-1ynbvzw-2 jgQsqn")
+        div = soup.find(class_="Lyrics__Container-sc-1ynbvzw-2")
         if div != None:
             return [str(ligne) for ligne in div if type(ligne) != tg]
 
