@@ -13,13 +13,12 @@ def trouver_page_genius(url):
         soup = BeautifulSoup(page, "lxml")
         if soup.find("div", {"id": "application"})!=None: return soup
 
-def recuperrer_text(soup):
+def recuperer_texte(soup):
     conteneurs  = soup.find_all(class_="Lyrics__Container-sc-1ynbvzw-2")
     lignes = []
     for conteneur in conteneurs :
         lignes += [ str(contenu) for contenu in conteneur if type(contenu)!=tg ]
-        print(lignes)
-    #print( type(conteneurs) )
+    return lignes
 
 def scraping_genius(url):
     soup = trouver_page_genius(url)
@@ -28,9 +27,15 @@ def scraping_genius(url):
     print(f"titre   : '{titre}'")
     print(f"artiste : '{artiste}'")
 
-    div  = soup.find_all(class_="Lyrics__Container-sc-1ynbvzw-2")
-    lignes = [str(ligne) for ligne in div if type(ligne) != tg]
-    #div  = soup.find(class_="song_body-lyrics")
+    nom_dossier = artiste
+    nom_fichier = titre + ".txt"
+
+    #a tester !!!
+    if not os.path.exists(nom_dossier):
+        os.makedirs(nom_dossier)
+
+    lignes = recuperer_texte(soup)
+
     mots = []
     for ligne in lignes: mots += decouper(ligne)
 
@@ -52,9 +57,13 @@ def scraping_genius(url):
     print("mots : ", mots)
     print("mots utilisees   : ", mots_comptes)
     print("mots inutilisees : ", set(mots)-mots_comptes)
-    #print( stopwords.words("french") )
+
     return set(mot for mot in mots)
 
+def imprimer(liste_lignes):
+    print("debut texte {"+ 50*"_")
+    for ligne in liste_lignes : print(ligne)
+    print("fin texte   }"+ 50*"_")
 
 urls = [
     "https://genius.com/Damso-mosaique-solitaire-lyrics",
@@ -65,6 +74,6 @@ urls = [
     "https://genius.com/Damso-macarena-lyrics",
     "https://genius.com/Damso-n-j-respect-r-lyrics"
 ]
-liste = recuperrer_text( trouver_page_genius(urls[1]) )
-print("texte : ", liste )
+liste = recuperer_texte( trouver_page_genius(urls[1]) )
+imprimer(liste)
 #liste = scraping_genius(urls[1])
