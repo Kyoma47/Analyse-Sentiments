@@ -23,10 +23,8 @@ def decouper(texte):
 
 def afficher(list_emotions, titre, artiste, nom_image="graph.png" ):
     w = Counter(list_emotions)
-    path = "C:\\Users\\siham\\github\\Analyse-Sentiments\\Siham\\"
-    nomDossier = path + artiste
-    if not os.path.exists(nomDossier):
-        os.makedirs(nomDossier)
+    if not os.path.exists(artiste):
+        os.mkdir(artiste)
     fig, axl = plt.subplots()
     plt.bar( w.keys(), w.values() )
     fig.autofmt_xdate()
