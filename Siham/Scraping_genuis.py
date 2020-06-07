@@ -18,7 +18,7 @@ def mots_genius(url):
         list += decouper(ligne)
     return list
 
-def emotions(url):
+def emotions(url, titre, artiste):
     mots_finals = mots_genius(url)
     dic = {}
     for emotion in ["amour", "colere", "degout", "honte", "joie", "peur",\
@@ -28,6 +28,21 @@ def emotions(url):
             for mot in decouper(fichier.read()):
                 if mot in mots_finals :
                     dic[emotion] += 1
-    afficher(dic)
+    afficher(dic, titre, artiste)
 
-emotions("https://genius.com/Keenv-explique-moi-lyrics")
+urls = ["https://genius.com/Keenv-explique-moi-lyrics", "https://genius.com/Keenv-les-mots-lyrics", \
+"https://genius.com/Keenv-saltimbanque-lyrics", "https://genius.com/Keenv-ma-vie-au-soleil-lyrics"]
+def boucle_genius(urls):
+    for url in urls:
+        while True:
+            page = requests.get(url).text
+            soup = BeautifulSoup(page, "lxml")
+            titre = soup.find(class_="SongHeader__Title-sc-1b7aqpg-7")
+            artiste = soup.find(class_="SongHeader__Artist-sc-1b7aqpg-8")
+            print("artiste : ", artiste, " titre : ", titre)
+            if artiste != titre != None:
+                emotions(url, titre, artiste)
+                break
+
+boucle_genius(urls)
+#emotions("https://genius.com/Keenv-explique-moi-lyrics")

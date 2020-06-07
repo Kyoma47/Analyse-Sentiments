@@ -7,6 +7,8 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from collections import Counter
 import matplotlib.pyplot as plt
 
+import os
+
 def sentiment_analyse(texte):
     scores = SentimentIntensityAnalyzer().polarity_score(texte)
     negative, positive = score['neg'], score['pos']
@@ -19,13 +21,15 @@ def decouper(texte):
     mots_utiles = [mot for mot in mots if mot not in stopwords.words("french")]
     return mots_utiles
 
-def afficher(list_emotions, nom_image="graph.png" ):
+def afficher(list_emotions, titre, artiste, nom_image="graph.png" ):
     w = Counter(list_emotions)
+    path = "C:\\Users\\siham\\github\\Analyse-Sentiments\\Siham\\" + str(artiste)
+    os.makedirs(path)
     fig, axl = plt.subplots()
     plt.bar( w.keys(), w.values() )
     fig.autofmt_xdate()
-    plt.savefig( nom_image )
-    plt.show()
+    plt.savefig(titre)
+    #plt.show()
     print(w)
 
 def traitement(usefull):
