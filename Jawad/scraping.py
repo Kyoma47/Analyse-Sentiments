@@ -34,12 +34,13 @@ def emotions(url):
     afficher( dic )
 
 urls = [
-    "https://genius.com/Keenv-les-mots-lyrics"
+    "https://genius.com/Jacques-brel-la-valse-a-mille-temps-lyrics"
     "https://genius.com/Damso-feu-de-bois-lyrics",
     "https://genius.com/Damso-amnesie-lyrics",
     "https://genius.com/Damso-macarena-lyrics",
     "https://genius.com/Damso-mosaique-solitaire-lyrics",
     "https://genius.com/Damso-n-j-respect-r-lyrics"
+    "https://genius.com/Keenv-les-mots-lyrics",
 ]
 
 def boucle_genius(urls):
@@ -47,11 +48,10 @@ def boucle_genius(urls):
             while True:
                 page = requests.get(url).text
                 soup = BeautifulSoup(page, "lxml")
-                print(url.split("/")[3], "soup:", soup)
-                artiste = soup.find(class_="Link-h3isu4-0 dpVWpH SongHeader__Artist-sc-1b7aqpg-8 DYpgM")
-                #artiste = soup.find(class="Link-h3isu4-0 dpVWpH SongHeader__Artist-sc-1b7aqpg-8 DYpgM")
-                titre = soup.find(class_="SongHeader__Title-sc-1b7aqpg-7 jQiTNQ")
-                #titre = soup.find(class_="SongHeader__Title-sc-1b7aqpg-7 eJWiuG")
+                print(url.split("/")[3])
+                artiste = soup.find(class_="SongHeader__Artist-sc-1b7aqpg-8")
+                titre = soup.find(class_="SongHeader__Title-sc-1b7aqpg-7")
+
                 print("Atiste :", artiste, "Titre :", titre)
                 if artiste != titre != None : break
 
