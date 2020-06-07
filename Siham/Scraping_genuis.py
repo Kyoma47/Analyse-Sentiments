@@ -41,8 +41,7 @@ def boucle_genius(urls):
             artiste = soup.find(class_="SongHeader__Artist-sc-1b7aqpg-8")
             print("artiste : ", artiste, " titre : ", titre)
             if artiste != titre != None:
-                emotions(url, titre, artiste)
+                emotions(url, titre.text, artiste.text)
                 break
 
 boucle_genius(urls)
-#emotions("https://genius.com/Keenv-explique-moi-lyrics")
