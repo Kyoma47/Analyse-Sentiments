@@ -47,7 +47,7 @@ def boucle_genius(urls):
             while True:
                 page = requests.get(url).text
                 soup = BeautifulSoup(page, "lxml")
-                print(url.split("/")[3], "soup:", soup)
+                print(url.split("/")[3])
                 artiste = soup.find(class_="Link-h3isu4-0 dpVWpH SongHeader__Artist-sc-1b7aqpg-8 DYpgM")
                 #artiste = soup.find(class="Link-h3isu4-0 dpVWpH SongHeader__Artist-sc-1b7aqpg-8 DYpgM")
                 titre = soup.find(class_="SongHeader__Title-sc-1b7aqpg-7 jQiTNQ")
