@@ -62,7 +62,7 @@ def occurences_emotions(mots):
 
     ignores = ignores.union( set(mots)-set(utilises) )
     print("utilisés :", utilises)
-    print("ignorés  :", ignores )
+    #print("ignorés  :", ignores )
     return dictionnaire
 
 def extraire_genius(url):
