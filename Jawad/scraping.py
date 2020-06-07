@@ -74,6 +74,5 @@ urls = [
     "https://genius.com/Damso-macarena-lyrics",
     "https://genius.com/Damso-n-j-respect-r-lyrics"
 ]
-liste = recuperer_texte( trouver_page_genius(urls[1]) )
-imprimer(liste)
-#liste = scraping_genius(urls[1])
+
+traiter_target()
