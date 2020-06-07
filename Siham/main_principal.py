@@ -84,8 +84,10 @@ def parcourir_genius():
 
 #============== main ================
 
-Kennv = ["https://genius.com/Keenv-explique-moi-lyrics", "https://genius.com/Keenv-les-mots-lyrics", \
-"https://genius.com/Keenv-saltimbanque-lyrics", "https://genius.com/Keenv-ma-vie-au-soleil-lyrics"]
+Marc_Lavoine = ["https://genius.com/Marc-lavoine-notre-histoire-lyrics", "https://genius.com/Marc-lavoine-il-restera-lyrics", \
+"https://genius.com/Marc-lavoine-jai-vu-la-lumiere-lyrics", "https://genius.com/Marc-lavoine-je-compte-les-jours-lyrics", \
+"https://genius.com/Marc-lavoine-tu-mas-renverse-lyrics", "https://genius.com/Marc-lavoine-toi-mon-amour-lyrics", \
+"https://genius.com/Marc-lavoine-on-est-passe-a-lheure-dete-lyrics", "https://genius.com/Marc-lavoine-on-a-cru-lyrics"]
 
 Lara_fabian = ["https://genius.com/Lara-fabian-par-amour-lyrics", "https://genius.com/Lara-fabian-je-taime-lyrics", \
 "https://genius.com/Lara-fabian-papillon-lyrics", "https://genius.com/Lara-fabian-changer-le-jeu-lyrics", \
@@ -97,4 +99,4 @@ Florent_Pagny = ["https://genius.com/Florent-pagny-vieillir-avec-toi-lyrics", "h
 "https://genius.com/Florent-pagny-je-connais-personne-lyrics", "https://genius.com/Florent-pagny-noir-et-blanc-lyrics", \
 "https://genius.com/Florent-pagny-rafale-de-vent-lyrics", "https://genius.com/Florent-pagny-revenons-sur-terre-lyrics"]
 
-chanteurs = [Florent_Pagny, Lara_fabian, Kennv]
+chanteurs = [Marc_Lavoine, Florent_Pagny, Lara_fabian]
