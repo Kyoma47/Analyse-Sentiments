@@ -24,7 +24,9 @@ def recuperer_paroles(soup):
                 lignes += [str(element)]
     return lignes
 
-def occurences_emotions(mots, ignorés):
+ignorés = set()
+def occurences_emotions(mots):
+    global ignorés
     emotions = ["amour", "colere", "degout", "honte", "joie", "peur", "surprise", "tristesse"]
     dictionnaire = {}
     utilisés = set()
@@ -35,12 +37,9 @@ def occurences_emotions(mots, ignorés):
                 if mot.strip() in mots :
                     dictionnaire[emotion] +=1
                     utilisés.add(mot.strip())
-                else:
-                    ignorés.add(mot.strip())
-    with open("Siham/mots_ignorés.txt", "w+", encoding='utf-8') as fichier :
-        for mot in ignorés:
-            fichier.write(mot+'\n')
+    ignorés = ignorés.union(set(mots)-set(utilisés))
     print("utilisé : ", utilisés)
+    print("ignorés : ",ignorés)
     return dictionnaire
 
 def afficher(dic_emotions, nom_dossier = "graphes", nom_image = "graphe.png"):
@@ -50,15 +49,15 @@ def afficher(dic_emotions, nom_dossier = "graphes", nom_image = "graphe.png"):
     fig.autofmt_xdate()
     plt.savefig(nom_dossier + "/" + nom_image)
     #plt.show()
-    print(w)
+    print("Dictionnaire : ", w)
 
-def extraire_genius(url, ignorés):
+def extraire_genius(url):
     soup = rechercher_page(url)
     liste_paroles = recuperer_paroles(soup)
     titre = soup.find(class_="SongHeader__Title-sc-1b7aqpg-7").text
     artiste = soup.find(class_="SongHeader__Artist-sc-1b7aqpg-8").text
-    print(titre)
-    print(artiste)
+    print("titre : ", titre)
+    print("artiste : ", artiste)
     nomDossier = 'Siham/' + artiste
     if not os.path.exists(nomDossier):
         os.mkdir(nomDossier)
@@ -68,17 +67,23 @@ def extraire_genius(url, ignorés):
     mots = []
     for ligne in liste_paroles :
         mots += decouper(ligne)
-    afficher(occurences_emotions(mots, ignorés), nomDossier, titre)
+    afficher(occurences_emotions(mots), nomDossier, titre)
 
 def parcourir_genius():
-    ignorés = set()
+    global ignorés
     for chanteur in chanteurs:
         for chanson in chanteur:
-            extraire_genius(chanson, ignorés)
+            extraire_genius(chanson)
             print()
             print()
+    ignorés = list(ignorés)
+    ignorés.sort()
+    with open("Siham/mots_ignorés.txt", "w+", encoding='utf-8') as fichier :
+        for mot in ignorés:
+            fichier.write(mot+'\n')
 
 #============== main ================
+
 Kennv = ["https://genius.com/Keenv-explique-moi-lyrics", "https://genius.com/Keenv-les-mots-lyrics", \
 "https://genius.com/Keenv-saltimbanque-lyrics", "https://genius.com/Keenv-ma-vie-au-soleil-lyrics"]
 
