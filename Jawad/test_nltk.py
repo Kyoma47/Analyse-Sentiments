@@ -7,7 +7,7 @@ nom_fichier = "trois_petites_oies"
 def afficher(liste, nom_image="graph.png"):
     from collections import Counter
     import matplotlib.pyplot as plt
-    
+
     w = Counter(liste)
     fig, axl = plt.subplots()
     plt.bar( w.keys(), w.values() )
@@ -17,7 +17,7 @@ def afficher(liste, nom_image="graph.png"):
     print(w)
 
 def decouper(texte):
-    a_remplacer = '’-\n\t' + string.punctuation
+    a_remplacer = '´’-\n\t' + string.punctuation
     minuscules = texte.lower()
     propre = minuscules.translate( str.maketrans(a_remplacer, len(a_remplacer)*' ', '…0123456789') )
     mots = word_tokenize( propre, "french")
