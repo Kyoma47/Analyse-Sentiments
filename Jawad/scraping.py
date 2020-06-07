@@ -10,9 +10,11 @@ def scraping_genius(url):
     while True:
         page = requests.get(url).text
         soup = BeautifulSoup(page, "lxml")
-        div  = soup.find(class_="Lyrics__Container-sc-1ynbvzw-2 jgQsqn")
-        if div!=None: return [str(ligne) for ligne in div if type(ligne) != tg]
-        #div  = soup.find(class_="song_body-lyrics")
+        if soup.find("div", {"id": "application"})!=None: break
+    div  = soup.find(class_="Lyrics__Container-sc-1ynbvzw-2 jgQsqn")
+    print(div)
+    return [str(ligne) for ligne in div if type(ligne) != tg]
+    #div  = soup.find(class_="song_body-lyrics")
 
 def mots_genius(url):
     mots = []
@@ -34,26 +36,26 @@ def emotions(url):
     afficher( dic )
 
 urls = [
-    "https://genius.com/Jacques-brel-la-valse-a-mille-temps-lyrics"
+    "https://genius.com/Jacques-brel-la-valse-a-mille-temps-lyrics",
     "https://genius.com/Damso-feu-de-bois-lyrics",
     "https://genius.com/Damso-amnesie-lyrics",
     "https://genius.com/Damso-macarena-lyrics",
     "https://genius.com/Damso-mosaique-solitaire-lyrics",
-    "https://genius.com/Damso-n-j-respect-r-lyrics"
-    "https://genius.com/Keenv-les-mots-lyrics",
+    "https://genius.com/Damso-n-j-respect-r-lyrics",
+    "https://genius.com/Keenv-les-mots-lyrics"
 ]
 
 def boucle_genius(urls):
-        for url in urls :
-            while True:
-                page = requests.get(url).text
-                soup = BeautifulSoup(page, "lxml")
-                print(url.split("/")[3])
-                artiste = soup.find(class_="SongHeader__Artist-sc-1b7aqpg-8")
-                titre = soup.find(class_="SongHeader__Title-sc-1b7aqpg-7")
-
-                print("Atiste :", artiste, "Titre :", titre)
-                if artiste != titre != None : break
+    import os
+    for url in urls :
+        page = requests.get(url).text
+        soup = BeautifulSoup(page, "lxml")
+        title = soup.find("title")
+        artiste,titre = title.text.split(" Lyrics")[0].split(" – ")
+        print(f"Atiste :'{artiste}' ; Titre :'{titre}'")
+        os.mkdir(artiste)
+        with open(artiste+"/"+titre+".html", 'w+', encoding="utf-8") as file:
+            file.write(str(soup))
 
 
 boucle_genius(urls)
