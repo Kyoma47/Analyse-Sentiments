@@ -109,4 +109,4 @@ def traiter_target(separement=True):
     with open("mots_ignores.txt", "w+", encoding="utf-8") as file:
         for mot in ignores: file.write(mot+"\n")
 
-traiter_target()
+#traiter_target()

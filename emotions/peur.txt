@@ -1,5 +1,3 @@
-émoi
-
 ablutophobie
 acarophobie
 achluophobie
@@ -38,12 +36,16 @@ confus
 couardise
 coulrophobie
 coupable
+craignes
 craindre
+crains
+craint
 crainte
 craintif
 cri
 croyance
 danger
+dilemme
 doute
 déballonner
 défait
@@ -93,6 +95,10 @@ impavide
 incertain
 inhibé
 inquiet
+inquiète
+inquiètes
+inquiétant
+inquiéter
 inquiétude
 insécurité
 intimidation
@@ -105,6 +111,7 @@ monstre
 mysophobie
 méfiance
 méfiant
+méfie
 nerveux
 nomophobie
 obscurité
@@ -135,6 +142,7 @@ péfli
 pépettes
 pétoche
 rassurer
+redouté
 scopophobie
 seul
 seule
@@ -150,6 +158,7 @@ suée
 symptôme
 tendu
 terreur
+terroristes
 terrorisé
 thanatophobie
 timide
@@ -170,6 +179,7 @@ vertige
 veulerie
 zoophobie
 égarement
+émoi
 émotif
 épouvantail
 épouvante
