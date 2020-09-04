@@ -9,6 +9,8 @@ aimer
 allégresse
 amitié
 amour
+amoureux
+amoureuse
 améliorer
 apothéose
 
@@ -79,6 +81,7 @@ exceptionnel
 extase
 extasier
 
+Félicitation
 Félicitations
 favorable
 favoriser
@@ -156,6 +159,7 @@ relaxer
 renforcer
 respirer
 riche
+richesse
 rire
 réchauffer
 régal
@@ -171,16 +175,16 @@ satisfaction
 satisfaire
 satisfait
 semplir
-senrichir
+enrichir
 serein
-sextasier
-silluminer
+extasier
+illuminer
 soleil
 sourire
 succès
-sélever
-sémerveiller
-sépanouir
+élever
+émerveiller
+épanouir
 sérénité
 
 triomphe
