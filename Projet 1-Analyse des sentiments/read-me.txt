@@ -1,0 +1,70 @@
+Ce projet a été realisé par le groupe {
+  - Mediane Jawad
+  - Oqaidi Oum Keltoum
+  - Soulkane Siham
+}
+
+Logiciels et Plateformes utilisés :
+ Logiciels necessaires : Python, Jupyter (pour la methode notebook)
+ l'application utilise le logiciel python ainsi que les bibliotheques suivantes :
+  - string
+  - requests
+  - bs4 (pour BeautifulSoup)
+  - os
+  - pathlib
+  - nltk
+  - textblob, textblob_fr
+  - matplotlib, math, numpy
+  - glob
+ NB: pour le bien de l'execution il faut verifier que les bibliotheques sitées sont disponible sur la machine executante
+ sinon il sufit de les installer en utilisant la commade suivante dans le cmd : pip installe nom_de_la_bibliotheque
+
+
+l'application présentée peut etre executé de deux méthodes
+
+Voici les instructions pour executer le code de l'application :
+I) Methode Jupyter :
+  - ouvrir l'invite de commade (cmd) dans le repertoire "Projet 1-Analyse des sentiments"
+  - installer si besoin Jupyter.
+  - lancer le notebook a l'aide de la commande : Jupyter notebook Sentiment Analysis.ipynb
+
+I) Methode console python :
+  1) Partie Poids du texte :
+    - ouvrir l'invite de commade (cmd) dans le repertoire "Projet 1-Analyse des sentiments"
+    - executer la commande : python Poids_Chansons.py
+
+  2) Partie Alternatve (Bibliotheque TextBlob) :
+    - ouvrir l'invite de commade (cmd) dans le repertoire "Projet 1-Analyse des sentiments"
+    - executer la commande : python Calcul_Polarité.py
+
+  3) Partie Emotions (Bibliotheque TextBlob) :
+    - ouvrir l'invite de commade (cmd) dans le repertoire "Projet 1-Analyse des sentiments"
+    - executer la commande : python Extraction_emotions.py
+
+
+Description du contenu du repertoire :
+
+  .ipynb_checkpoints :
+    repertoire caché contenent des fichiers caches (iniutile pour notre application)
+
+  Chanson :
+    repertoire contenant les paroles de chansons extraite du site genius.com
+    chemin sous la forme : Chansons/Nom_Artiste/nom_chanson.txt
+
+  emotions :
+    repertoire contenant les fichiers chacuns remplits de mots concernant une emotion :
+      amour.txt   : fichier contenants des mots qui evoquent l'emotion "amour"
+      colere.txt  : fichier contenants des mots qui evoquent l'emotion "colere"
+      degout.txt  : fichier contenants des mots qui evoquent l'emotion "degout"
+      honte.txt   : fichier contenants des mots qui evoquent l'emotion "honte"
+      peur.txt    : fichier contenants des mots qui evoquent l'emotion "peur"
+      ...
+
+  fichiers texte :
+    - targets.txt : contients tous les liens du site genius.com dont les paroles vont etre extraites.
+    - negatif_words.txt , positif_words.txt : contient respectivement des mots negatifs / positifs
+
+  fichiers executables : Poids_Chansons.py, Calcul_Polarité.py, Extraction_emotions.py (deja expliqué en haut)
+
+  Sentiment Analysis.ipynb : fichier notebook (peut etre ouvert avec Jupyter)
+  
